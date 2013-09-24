@@ -1,0 +1,13 @@
+Package: Rlabkey
+Version: 2.1.123
+Date: 2013-09-23
+Title: Data exchange between R and LabKey Server
+Author: Peter Hussey 
+SystemRequirements: curl (version 7.12.0 or higher)
+        <http://curl.haxx.se>
+Maintainer: Cory Nathe <cnathe@labkey.com>
+Description: This package allows an R user to discover, query and modify data in LabKey Server
+License: Apache License 2.0
+Copyright: Copyright (c) 2008-2013 LabKey Corporation
+LazyLoad: true
+Depends: RCurl, rjson (>= 0.1.3)

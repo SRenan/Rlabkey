@@ -1,0 +1,75 @@
+Changes in version 2.1.123
+  o added labkey.importRows
+  o performance improvement for labkey.importRows, labkey.insertRows, labkey.deleteRows, labkey.updateRows
+
+Changes in version 2.1.122
+  o fix URL-encoding for spaces in parameter names
+
+Changes in version 2.1.121
+  o fix to error message on failed API call (deleteRows, insertRows, updateRows, etc.)
+  o fix URL encoding of schemaName in executeSql call
+
+Changes in version 2.1.120
+  o minor documentation updates
+  o fix to error message on failed insertRows call
+
+Changes in version 2.1.119
+  o add new labkey.makeRemotePath function 
+  o minor documentation fixes
+
+Changes in version 2.1.118
+  o convert factors to strings for toJSON usages in labkey.insertRows, labkey.updateRows, and labkey.deleteRows
+
+Changes in version 2.1.117
+  o Changes to use curlEscape instead of URLencode for schemaName, queryName, lookupKey, assayName, viewName, and colSelect
+  o Add parsing of new JSON date format
+  o The following filter types were added to the makeFilter function:
+        DATE_GREATER_THAN_OR_EQUAL, DATE_LESS_THAN_OR_EQUAL,
+        IN, NOT_IN, EQUALS_NONE_OF, CONTAINS_ONE_OF, and CONTAINS_NONE_OF
+
+Changes in version 2.1.116
+Minor change to makeFiler.R to use curlEscape instead of URLencode for encoding the colFilter parameters.
+
+Changes in version 2.1.110
+Major expansion of Rlabkey.  Added metadata functions, session-based access function, much faster rjson parsing on 
+returned data sets, many bug fixes related to null handling.  
+See the Rlabkey Users Guide for an overview of the package.
+	
+
+Changes in Version 0.0.9
+  o Misc bug fixes
+
+Changes in Version 0.0.8
+  o The following filter names have been added in the makeFilter function:
+QC_VALUE
+NOT_QC_VALUE
+
+Changes in Version 0.0.7
+  o In previous versions this package would only bring labkey data into R that had hidden columns (ie, keys or other identifiers not usually shown to the user). Now any labkey data, with or without hidden columns, can be brought into R.
+
+
+Changes in Version 0.0.6
+  o Replaced the stripAllHidden argument with showHidden. This affects the labkey.selectRows and labkey.executeSql functions and was done for clarity. The old default stripAllHidden=TRUE is replaced by the new default showHidden=FALSE which has the same functionality. See documentation for details.
+  o The old stripAllHidden flag was removed from labkey.insertRows, labkey.updateRows and labkey.deleteRows. It served no use in these functions. The stripAllHidden (now replaced by showHidden) is only meaningfull when data are being returned to the user. 
+  o The following filter names have been modified in the makeFilter function:
+EQUALS -> EQUAL
+NOT_EQUALS -> NOT_EQUAL
+NOT_EQUAL_OR_NULL -> NOT_EQUAL_OR_MISSING
+IS_MISSING -> MISSING
+IS_NOT_MISSING -> NOT_MISSING
+GREATER_THAN_OR_EQUAL_TO -> GREATER_THAN_OR_EQUAL
+LESS_THAN_OR_EQUAL_TO -> LESS_THAN_OR_EQUAL 
+
+The filter name changes were made for clarity and consistency with the other software packages that retrieve data from a Labkey database.
+
+
+Changes in Version 0.0.5
+  o modified the makeDF function to speed up data frame creation from the meta data
+  o labkey.deleteRows function now accepts an entire row of data as input instead of just the Key column
+
+
+Changes in Version 0.0.4
+  o first CRAN release of the Rlabkey package
+
+
+
